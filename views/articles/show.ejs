@@ -12,6 +12,13 @@
   <% }) %>
 </ul>
 
+<form method="POST" action="/articles/comment">
+  Name: <input type="text" name="name">
+  Comment: <input type="text" name="content">
+  <input type="hidden" name="articleId" value=<%= article.id %> >
+  <input type="Submit">
+</form>
+
 <hr />
 
 <a href="/">&larr; Back Home</a>

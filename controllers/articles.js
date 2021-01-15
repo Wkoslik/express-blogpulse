@@ -45,6 +45,12 @@ router.get('/:id', (req, res) => {
 })
 
 //POST /articles/:id/comments
-
+router.post('/:id', (req,res)=>{
+  console.log(req.body);
+  db.comment.create(req.body)
+  .then(newComment =>{
+    res.redirect('/articles/' + req.body.articleId);
+  }).catch(err => console.log(err));
+})
 
 module.exports = router
